@@ -16,10 +16,14 @@ public class Pizza_DAO {
 		
 		public void find(Pizza pizza, int num) {
 		 pizza = entMan.find(Pizza.class, num);
+		 System.out.println("");
+		 System.out.println("*****************************");
 		 System.out.println("A pizza nº " + num + " é de: ");
 		 System.out.println("Sabor: " + pizza.getSabor());
 		 System.out.println("Borda: " + pizza.getBorda());
 		 System.out.println("Tamanho: " + pizza.getTamanho());
+		 System.out.println("*****************************");
+		 System.out.println("");
 		}
 		
 		
@@ -30,6 +34,11 @@ public class Pizza_DAO {
 		 entMan.getTransaction().begin(); 
 		 entMan.persist(pizza);
 		 entMan.getTransaction().commit();
+		 System.out.println("");
+		 System.out.println("*****************************");
+		 System.out.println("Pizza criada com sucesso!!");
+		 System.out.println("*****************************");
+		 System.out.println("");
 		 }
 		 
 		
@@ -40,6 +49,11 @@ public class Pizza_DAO {
 		entMan.getTransaction().begin();
 		entMan.remove(pizza);
 		entMan.getTransaction().commit();
+		System.out.println("");
+		System.out.println("*****************************");
+		System.out.println("Pizza excluída com sucesso!!");
+		System.out.println("*****************************");
+		System.out.println("");
 		}		
 		
 		//MODIFY
@@ -47,6 +61,11 @@ public class Pizza_DAO {
 		entMan.getTransaction().begin(); 
 		entMan.merge(pizza);
 		entMan.getTransaction().commit();
+		System.out.println("");
+		System.out.println("*****************************");
+		System.out.println("Pizza Modificada com sucesso!!");
+		System.out.println("*****************************");
+		System.out.println("");
 		}
 
 		//entMan.close();
