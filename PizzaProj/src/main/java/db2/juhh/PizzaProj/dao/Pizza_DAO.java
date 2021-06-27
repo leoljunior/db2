@@ -13,12 +13,14 @@ public class Pizza_DAO {
 	
 	
 		//FIND
-		/*
-		 * Pizza pizza = entMan.find(Pizza.class, 4);
-		 * System.out.println("Sabor da pizza: " + pizza.getSabor());
-		 * System.out.println("Borda da pizza: " + pizza.getBorda());
-		 * System.out.println("Tamanho da pizza: " + pizza.getTamanho());
-		 */
+		
+		public void find(Pizza pizza, int num) {
+		 pizza = entMan.find(Pizza.class, num);
+		 System.out.println("A pizza nº " + num + " é de: ");
+		 System.out.println("Sabor: " + pizza.getSabor());
+		 System.out.println("Borda: " + pizza.getBorda());
+		 System.out.println("Tamanho: " + pizza.getTamanho());
+		}
 		
 		
 		//INSERT
@@ -41,16 +43,13 @@ public class Pizza_DAO {
 		}		
 		
 		//MODIFY
-		/*
-		 * Pizza pizza = new Pizza(); pizza.setId(3); pizza.setSabor("A Moda");
-		 * pizza.setBorda("Nenhuum"); pizza.setTamanho("Familia");
-		 * 
-		 * entMan.getTransaction().begin(); entMan.merge(pizza);
-		 * entMan.getTransaction().commit(); }
-		 */
+		public void modify(Pizza pizza) {		  
+		entMan.getTransaction().begin(); 
+		entMan.merge(pizza);
+		entMan.getTransaction().commit();
+		}
+
 		//entMan.close();
 		//entManFac.close();
-		
-	}
-	
 
+}
