@@ -12,7 +12,7 @@ public class Ingrediente {
 		private String nome;
 				
 		private int quantidade;	
-		private boolean extra;
+		private String extra;
 		
 		
 		public Ingrediente() {
@@ -40,12 +40,12 @@ public class Ingrediente {
 		}
 
 
-		public boolean isExtra() {
+		public String getExtra() {
 			return extra;
 		}
 
 
-		public void setExtra(boolean extra) {
+		public void setExtra(String extra) {
 			this.extra = extra;
 		}
 
